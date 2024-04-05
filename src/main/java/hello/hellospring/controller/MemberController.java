@@ -25,7 +25,7 @@ public class MemberController {
     }
 
     @PostMapping("/members/new")
-    private String create(MemberForm form) {
+    public String create(MemberForm form) {
         Member member = new Member();
         member.setName(form.getName());
 
@@ -35,7 +35,7 @@ public class MemberController {
     }
 
     @GetMapping("/members")
-    private String list(Model model) {
+    public String list(Model model) {
         List<Member> members = memberService.findMembers();
         model.addAttribute("members", members);
 
